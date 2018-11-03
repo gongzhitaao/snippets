@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+host=$1
+if [ -z "$host" ]; then
+    echo "Usage: is-machine-up host (or alias)" >&2
+    exit 1
+fi
+
+ssh "$host" -q -o BatchMode=yes -o ConnectTimeout=5 exit || false
