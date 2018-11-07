@@ -42,3 +42,10 @@ def test_day():
     y0 = '1.00089d'
     y1 = elapsed(x)
     assert y1 == y0
+
+
+def test_large():
+    x = 8640000
+    y0 = '100.00000d'
+    y1 = elapsed(x)
+    assert y1 == y0
